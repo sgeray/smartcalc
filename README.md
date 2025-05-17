@@ -1,4 +1,4 @@
-# hesaplama
+# smartcalc
 
 - Why Built This
 

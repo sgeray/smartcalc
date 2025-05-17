@@ -1,0 +1,112 @@
+{
+"@@locale": "tr",
+"appTitle": "SmartCalc",
+"calculate": "Hesapla",
+"enterValueA": "A değerini girin",
+"enterValueB": "B değerini girin",
+"resultPrefix": "Sonuç: ",
+"changePrefix": "Değişim: ",
+"settings": "Ayarlar",
+"darkTheme": "Koyu Tema",
+"language": "Dil",
+"english": "İngilizce",
+"turkish": "Türkçe",
+"invalidInputMessage": "Lütfen A ve B için geçerli sayılar girin.",
+"percentageCalculator": "Yüzde Hesaplayıcı",
+"calcOptionBPercentOfA": "A sayısının yüzde B'si kaçtır?",
+"calcOptionPercentOfB": "B sayısı yüzde kaçtır?",
+"calcOptionPercentageChange": "A'dan B'ye yüzde değişim nedir?",
+"calcOptionIncreaseByPercent": "A sayısı yüzde B oranında artarsa ne olur?",
+"calcOptionDecreaseByPercent": "A sayısı yüzde B oranında azalırsa ne olur?",
+
+"discountCalculator": "İndirim Hesaplayıcı",
+"originalPrice": "Orijinal Fiyat",
+"discountPercent": "İndirim %",
+"discountAmount": "İndirim Tutarı",
+"finalPrice": "Son Fiyat",
+
+"vatCalculator": "KDV Hesaplayıcı",
+"priceWithoutVat": "Fiyat (KDV hariç)",
+"vatRate": "KDV Oranı (%)",
+"vatAmount": "KDV Tutarı",
+"priceWithVat": "KDV dahil Fiyat",
+
+"profitMarginCalculator": "Kâr Marjı Hesaplayıcı",
+"costPrice": "Maliyet Fiyatı",
+"sellingPrice": "Satış Fiyatı",
+"profitAmount": "Kâr Tutarı",
+"profitPercentage": "Kâr Yüzdesi",
+
+"tipCalculator": "Bahşiş Hesaplayıcı",
+"billAmount": "Hesap Tutarı",
+"tipPercent": "Bahşiş Yüzdesi",
+"peopleCount": "Kişi Sayısı",
+"totalWithTip": "Bahşiş Dahil Toplam",
+"perPerson": "Kişi Başı",
+
+"unitPriceCalculator": "Birim Fiyat Hesaplayıcı",
+"totalPrice": "Toplam Fiyat",
+"quantity": "Miktar",
+"pricePerUnit": "Birim Fiyat",
+
+"changeByPercentCalculator": "% Oranında Artış/Azalış Hesaplayıcı",
+"originalValue": "Orijinal Değer",
+"changePercent": "Değişim Yüzdesi",
+"changeType": "Değişim Türü",
+"increase": "Artış",
+"decrease": "Azalış",
+
+"loanCalculator": "Kredi Hesaplayıcı",
+"loanAmount": "Kredi Tutarı",
+"interestRate": "Faiz Oranı (%)",
+"months": "Ay Sayısı",
+"monthlyPayment": "Aylık Ödeme",
+
+"bmiCalculator": "VKİ Hesaplayıcı",
+"heightCm": "Boy (cm)",
+"weightKg": "Ağırlık (kg)",
+"yourBmi": "VKİ'niz",
+"bmiCategory": "Kategori",
+
+"dateDiffCalculator": "Tarih Farkı Hesaplayıcı",
+"startDate": "Başlangıç Tarihi",
+"endDate": "Bitiş Tarihi",
+"useToday": "Bitiş Tarihi Olarak Bugünü Kullan",
+"differenceResult": "Fark",
+
+"areaConverter": "Alan Dönüştürücü",
+"inputAreaValue": "Alan değeri girin",
+"fromUnit": "Biriminden",
+"toUnit": "Birimine",
+
+"financeTools": "Finans Araçları",
+"shoppingTools": "Alışveriş Araçları",
+"generalMathTools": "Genel Matematik Araçları",
+
+"currencyConverter": "Döviz Çevirici",
+"amount": "Miktar",
+"fromCurrency": "Para Biriminden",
+"toCurrency": "Para Birimine",
+
+"speedConverter": "Hız Dönüştürücü",
+"inputSpeedValue": "Hız girin",
+"fromSpeedUnit": "Biriminden",
+"toSpeedUnit": "Birimine",
+
+"temperatureConverter": "Sıcaklık Dönüştürücü",
+"inputTemperatureValue": "Sıcaklık girin",
+"fromTemperatureUnit": "Biriminden",
+"toTemperatureUnit": "Birimine",
+
+"lengthConverter": "Uzunluk Dönüştürücü",
+"inputLengthValue": "Uzunluk girin",
+"fromLengthUnit": "Biriminden",
+"toLengthUnit": "Birimine",
+
+"search": "Ara",
+
+"favorites": "Favoriler",
+"recentCalculators": "Son Hesap Makineleri",
+
+"showOnlyFavorites": "Sadece favorileri göster"
+}
