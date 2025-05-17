@@ -35,10 +35,6 @@ class _SettingsPageState extends State<SettingsPage> {
 
     return Scaffold(
       appBar: AppBar(title: Text(locale.settings)),
-      /*drawer: CustomDrawer(
-        onThemeToggle: widget.onThemeToggle,
-      ),*/
-      // ✅ Add this line
       body: ListView(
         children: [
           SwitchListTile(
@@ -57,7 +53,7 @@ class _SettingsPageState extends State<SettingsPage> {
               onChanged: (Locale? newLocale) {
                 if (newLocale != null) {
                   _changeLanguage(newLocale);
-                  widget.onLocaleChange(newLocale); // 🌐 Update global locale
+                  widget.onLocaleChange(newLocale);
                   // Restarting MaterialApp or using a language manager will be required
                   // for a full app language update (see below)
                 }

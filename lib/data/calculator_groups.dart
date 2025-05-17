@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-// Import all your calculator pages
+// calculator pages
 import '../pages/calculators/area_converter.dart';
 import '../pages/calculators/bmi_calculator.dart';
 import '../pages/calculators/change_by_percent_calculator.dart';

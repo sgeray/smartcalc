@@ -20,7 +20,7 @@ class _CurrencyConverterState extends State<CurrencyConverter> {
     'USD': 1.0,
     'EUR': 0.92,
     'GBP': 0.78,
-    'TRY': 32.50,
+    'TRY': 38.50,
     'JPY': 154.0,
   };
 

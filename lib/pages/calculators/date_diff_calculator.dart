@@ -61,7 +61,6 @@ class _DateDiffCalculatorState extends State<DateDiffCalculator> {
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
-    final formatter = DateFormat.yMMMMd();
 
     return Scaffold(
       appBar: AppBar(title: Text(locale.dateDiffCalculator)),

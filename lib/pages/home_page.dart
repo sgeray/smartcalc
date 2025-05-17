@@ -1,22 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-/*import 'calculators/area_converter.dart';
-import 'calculators/bmi_calculator.dart';
-import 'calculators/change_by_percent_calculator.dart';
-import 'calculators/currency_converter.dart';
-import 'calculators/discount_calculator.dart';
-import 'calculators/length_converter.dart';
-import 'calculators/loan_calculator.dart';
-import 'calculators/profit_margin_calculator.dart';
-import 'calculators/speed_converter.dart';
-import 'calculators/temperature_converter.dart';
-import 'calculators/tip_calculator.dart';
-import 'calculators/unit_price_calculator.dart';
-import 'calculators/vat_calculator.dart';*/
 import '../data/calculator_groups.dart';
-import '../widgets/custom_drawer.dart';
-/*import 'calculators/date_diff_calculator.dart';
-import 'calculators/percentage_calculator.dart';*/
 import '../widgets/custom_drawer.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -165,138 +149,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  /*Widget _buildGridFromIds(
-    List<String> ids,
-    List<Map<String, dynamic>> allItems, {
-    bool isRecent = false,
-  }) {
-    final filtered = allItems.where((i) => ids.contains(i['id'])).toList();
-
-    return GridView.count(
-      crossAxisCount: 4,
-      shrinkWrap: true,
-      crossAxisSpacing: 16,
-      mainAxisSpacing: 16,
-      childAspectRatio: 1,
-      physics: const NeverScrollableScrollPhysics(),
-      children:
-          filtered
-              .map((item) => _buildCalculatorTile(item, isRecent: isRecent))
-              .toList(),
-    );
-  }*/
-
   @override
   Widget build(BuildContext context) {
     final locale = AppLocalizations.of(context)!;
-
-    /*final calculatorGroups = [
-      {
-        'title': locale.financeTools,
-        'items': [
-          {
-            'id': 'profitMarginCalculator',
-            'title': locale.profitMarginCalculator,
-            'icon': Icons.trending_up,
-            'builder': const ProfitMarginCalculator(),
-          },
-          {
-            'id': 'loanCalculator',
-            'title': locale.loanCalculator,
-            'icon': Icons.credit_score,
-            'builder': const LoanCalculator(),
-          },
-          {
-            'id': 'currencyConverter',
-            'title': locale.currencyConverter,
-            'icon': Icons.currency_exchange,
-            'builder': const CurrencyConverter(),
-          },
-        ],
-      },
-      {
-        'title': locale.shoppingTools,
-        'items': [
-          {
-            'id': 'discountCalculator',
-            'title': locale.discountCalculator,
-            'icon': Icons.local_offer,
-            'builder': const DiscountCalculator(),
-          },
-          {
-            'id': 'vatCalculator',
-            'title': locale.vatCalculator,
-            'icon': Icons.receipt_long,
-            'builder': const VatCalculator(),
-          },
-          {
-            'id': 'unitPriceCalculator',
-            'title': locale.unitPriceCalculator,
-            'icon': Icons.shopping_cart_checkout,
-            'builder': const UnitPriceCalculator(),
-          },
-        ],
-      },
-      {
-        'title': locale.generalMathTools,
-        'items': [
-          {
-            'id': 'percentageCalculator',
-            'title': locale.percentageCalculator,
-            'icon': Icons.percent,
-            'builder': const PercentageCalculator(),
-          },
-          {
-            'id': 'changeByPercentCalculator',
-            'title': locale.changeByPercentCalculator,
-            'icon': Icons.trending_neutral,
-            'builder': const ChangeByPercentCalculator(),
-          },
-          {
-            'id': 'tipCalculator',
-            'title': locale.tipCalculator,
-            'icon': Icons.attach_money,
-            'builder': const TipCalculator(),
-          },
-          {
-            'id': 'bmiCalculator',
-            'title': locale.bmiCalculator,
-            'icon': Icons.monitor_weight,
-            'builder': const BmiCalculator(),
-          },
-          {
-            'id': 'dateDiffCalculator',
-            'title': locale.dateDiffCalculator,
-            'icon': Icons.date_range,
-            'builder': const DateDiffCalculator(),
-          },
-          {
-            'id': 'areaConverter',
-            'title': locale.areaConverter,
-            'icon': Icons.square_foot,
-            'builder': const AreaConverter(),
-          },
-          {
-            'id': 'speedConverter',
-            'title': locale.speedConverter,
-            'icon': Icons.speed,
-            'builder': const SpeedConverter(),
-          },
-          {
-            'id': 'temperatureConverter',
-            'title': locale.temperatureConverter,
-            'icon': Icons.thermostat,
-            'builder': const TemperatureConverter(),
-          },
-          {
-            'id': 'lengthConverter',
-            'title': locale.lengthConverter,
-            'icon': Icons.straighten,
-            'builder': const LengthConverter(),
-          },
-        ],
-      },
-    ];*/
 
     final calculatorGroups = getCalculatorGroups(locale);
 

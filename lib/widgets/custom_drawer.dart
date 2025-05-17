@@ -38,30 +38,6 @@ class CustomDrawer extends StatelessWidget {
               ],
             ),
           ),
-          /*ListTile(
-            title: Text(locale.percentageCalculator),
-            onTap: () => Navigator.pop(context), // Already home
-          ),
-          ListTile(
-            title: Text(locale.discountCalculator),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const DiscountCalculator()),
-              );
-            },
-          ),
-          ListTile(
-            title: Text(locale.vatCalculator),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const VatCalculator()),
-              );
-            },
-          ),*/
           ...groups.expand((group) => group['items']).map<Widget>((item) {
             return ListTile(
               title: Text(item['title']),
@@ -86,7 +62,7 @@ class CustomDrawer extends StatelessWidget {
                   builder:
                       (context) => SettingsPage(
                         onThemeToggle: onThemeToggle,
-                        onLocaleChange: onLocaleChange, // ✅ pass it
+                        onLocaleChange: onLocaleChange,
                       ),
                 ),
               );

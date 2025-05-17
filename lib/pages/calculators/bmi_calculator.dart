@@ -33,6 +33,7 @@ class _BmiCalculatorState extends State<BmiCalculator> {
     String cat;
 
     if (bmi < 18.5) {
+      // Add localization here?
       cat = 'Underweight';
     } else if (bmi < 24.9) {
       cat = 'Normal';

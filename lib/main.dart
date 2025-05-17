@@ -21,12 +21,12 @@ class SmartCalcApp extends StatefulWidget {
 
 class _SmartCalcAppState extends State<SmartCalcApp> {
   ThemeMode _themeMode = ThemeMode.system;
-  Locale _locale = const Locale('en'); // 🌐 New
+  Locale _locale = const Locale('en');
 
   @override
   void initState() {
     super.initState();
-    _loadPreferences(); // 👈 Load saved settings on startup
+    _loadPreferences();
   }
 
   Future<void> _loadPreferences() async {
@@ -43,7 +43,7 @@ class _SmartCalcAppState extends State<SmartCalcApp> {
 
   void _toggleTheme(bool isDark) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('isDarkTheme', isDark); // ✅ Save theme
+    await prefs.setBool('isDarkTheme', isDark);
 
     setState(() {
       _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
@@ -52,10 +52,7 @@ class _SmartCalcAppState extends State<SmartCalcApp> {
 
   void _changeLocale(Locale newLocale) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-      'languageCode',
-      newLocale.languageCode,
-    ); // ✅ Save language
+    await prefs.setString('languageCode', newLocale.languageCode);
 
     setState(() {
       _locale = newLocale;
@@ -65,7 +62,7 @@ class _SmartCalcAppState extends State<SmartCalcApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: _locale, // 🌐 Apply selected locale here
+      locale: _locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -81,7 +78,7 @@ class _SmartCalcAppState extends State<SmartCalcApp> {
         builder:
             (context) => HomePage(
               onThemeToggle: _toggleTheme,
-              onLocaleChange: _changeLocale, // ✅ ADD THIS LINE
+              onLocaleChange: _changeLocale,
               title: AppLocalizations.of(context)!.appTitle,
             ),
       ),
