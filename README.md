@@ -8,8 +8,6 @@ SmartCalc was built not just as a learning exercise, but as a serious, functiona
 
 It started with a simple percentage calculator, and evolved into a full offline toolkit with multi language support.
 
-![Build Status](https://github.com/sgeray/smartcalc/actions/workflows/build.yml/badge.svg)
-
 - To Run Locally
 
 flutter pub get
@@ -24,8 +22,6 @@ Pull requests welcome! Want to add a new calculator or translation? Fork it, bui
 - License
 
 This project is open-source and available under the MIT License.
-
-![License](https://img.shields.io/github/license/sgeray/smartcalc)
 
 Built by a passionate dev discovering Flutter — and loving every widget of it 💙
 
