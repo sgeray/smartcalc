@@ -1,0 +1,112 @@
+{
+  "@@locale": "en",
+  "appTitle": "SmartCalc",
+  "calculate": "Calculate",
+  "enterValueA": "Enter value A",
+  "enterValueB": "Enter value B",
+  "resultPrefix": "Result: ",
+  "changePrefix": "Change: ",
+  "settings": "Settings",
+  "darkTheme": "Dark Theme",
+  "language": "Language",
+  "english": "English",
+  "turkish": "Turkish",
+  "invalidInputMessage": "Please enter valid numbers for A and B.",
+  "percentageCalculator": "Percentage Calculator",
+  "calcOptionBPercentOfA": "What is the B% of the number A?",
+  "calcOptionPercentOfB": "What is the percentage of the number B?",
+  "calcOptionPercentageChange": "What is the percentage change from A to B?",
+  "calcOptionIncreaseByPercent": "What will happen if A is increased by B%?",
+  "calcOptionDecreaseByPercent": "What will happen if A is decreased by B%?",
+
+  "discountCalculator": "Discount Calculator",
+  "originalPrice": "Original Price",
+  "discountPercent": "Discount %",
+  "discountAmount": "Discount Amount",
+  "finalPrice": "Final Price",
+
+  "vatCalculator": "VAT Calculator",
+  "priceWithoutVat": "Price (excluding VAT)",
+  "vatRate": "VAT Rate (%)",
+  "vatAmount": "VAT Amount",
+  "priceWithVat": "Price with VAT",
+
+  "profitMarginCalculator": "Profit Margin Calculator",
+  "costPrice": "Cost Price",
+  "sellingPrice": "Selling Price",
+  "profitAmount": "Profit Amount",
+  "profitPercentage": "Profit Percentage",
+
+  "tipCalculator": "Tip Calculator",
+  "billAmount": "Bill Amount",
+  "tipPercent": "Tip Percentage",
+  "peopleCount": "Number of People",
+  "totalWithTip": "Total with Tip",
+  "perPerson": "Per Person",
+
+  "unitPriceCalculator": "Unit Price Calculator",
+  "totalPrice": "Total Price",
+  "quantity": "Quantity",
+  "pricePerUnit": "Price per Unit",
+
+  "changeByPercentCalculator": "Increase/Decrease by % Calculator",
+  "originalValue": "Original Value",
+  "changePercent": "Change Percentage",
+  "changeType": "Change Type",
+  "increase": "Increase",
+  "decrease": "Decrease",
+
+  "loanCalculator": "Loan Calculator",
+  "loanAmount": "Loan Amount",
+  "interestRate": "Interest Rate (%)",
+  "months": "Number of Months",
+  "monthlyPayment": "Monthly Payment",
+
+  "bmiCalculator": "BMI Calculator",
+  "heightCm": "Height (cm)",
+  "weightKg": "Weight (kg)",
+  "yourBmi": "Your BMI",
+  "bmiCategory": "Category",
+
+  "dateDiffCalculator": "Date Difference Calculator",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "useToday": "Use Today as End Date",
+  "differenceResult": "Difference is",
+  
+  "areaConverter": "Area Converter",
+  "inputAreaValue": "Enter area value",
+  "fromUnit": "From Unit",
+  "toUnit": "To Unit",
+
+  "financeTools": "Finance Tools",
+  "shoppingTools": "Shopping Tools",
+  "generalMathTools": "General Math Tools",
+
+  "currencyConverter": "Currency Converter",
+  "amount": "Amount",
+  "fromCurrency": "From Currency",
+  "toCurrency": "To Currency",
+  
+  "speedConverter": "Speed Converter",
+  "inputSpeedValue": "Enter speed",
+  "fromSpeedUnit": "From Unit",
+  "toSpeedUnit": "To Unit",
+
+  "temperatureConverter": "Temperature Converter",
+  "inputTemperatureValue": "Enter temperature",
+  "fromTemperatureUnit": "From Unit",
+  "toTemperatureUnit": "To Unit",
+  
+  "lengthConverter": "Length Converter",
+  "inputLengthValue": "Enter length",
+  "fromLengthUnit": "From Unit",
+  "toLengthUnit": "To Unit",
+
+  "search": "Search",
+
+  "favorites": "Favorites",
+  "recentCalculators": "Recent Calculators",
+
+  "showOnlyFavorites": "Show only favorites"
+}

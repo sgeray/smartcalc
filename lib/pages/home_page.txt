@@ -1,0 +1,263 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hesaplama/pages/calculators/change_by_percent_calculator.dart';
+import 'package:hesaplama/pages/calculators/discount_calculator.dart';
+import 'package:hesaplama/pages/calculators/loan_calculator.dart';
+import 'package:hesaplama/pages/calculators/profit_margin_calculator.dart';
+import 'package:hesaplama/pages/calculators/tip_calculator.dart';
+import 'package:hesaplama/pages/calculators/unit_price_calculator.dart';
+import 'package:hesaplama/pages/calculators/vat_calculator.dart';
+import '../widgets/custom_drawer.dart';
+import 'calculators/percentage_calculator.dart';
+import '../widgets/custom_drawer.dart';
+
+class HomePage extends StatefulWidget {
+  final Function(bool) onThemeToggle;
+  final Function(Locale) onLocaleChange;
+  final String title;
+
+  const HomePage({
+    super.key,
+    required this.onThemeToggle,
+    required this.onLocaleChange,
+    required this.title,
+  });
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final TextEditingController _searchController = TextEditingController();
+  String _searchQuery = '';
+
+  List<String> favoriteIds = [];
+  List<String> recentIds = [];
+
+  final sectionHeaderStyle = const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
+
+  Widget _buildCalculatorTile(Map<String, dynamic> item) {
+    final id = item['id'] as String;
+    final title = item['title'] as String;
+
+    return Material(
+      color: Colors.white,
+      elevation: 2,
+      borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: () {
+          setState(() {
+            recentIds.remove(id);
+            recentIds.insert(0, id);
+            if (recentIds.length > 10) {
+              recentIds = recentIds.take(10).toList();
+            }
+          });
+
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => item['builder']),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(item['icon'], size: 36),
+              const SizedBox(height: 12),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 12),
+              ),
+              const SizedBox(height: 8),
+              IconButton(
+                icon: Icon(
+                  favoriteIds.contains(id) ? Icons.star : Icons.star_border,
+                  size: 20,
+                  color: Colors.amber,
+                ),
+                onPressed: () {
+                  setState(() {
+                    if (favoriteIds.contains(id)) {
+                      favoriteIds.remove(id);
+                    } else {
+                      favoriteIds.add(id);
+                    }
+                  });
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildGridFromIds(
+    List<String> ids,
+    List<Map<String, dynamic>> allItems,
+  ) {
+    final filtered = allItems.where((i) => ids.contains(i['id'])).toList();
+
+    return GridView.count(
+      crossAxisCount: 4,
+      shrinkWrap: true,
+      crossAxisSpacing: 16,
+      mainAxisSpacing: 16,
+      childAspectRatio: 0.8,
+      physics: const NeverScrollableScrollPhysics(),
+      children: filtered.map((item) => _buildCalculatorTile(item)).toList(),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final locale = AppLocalizations.of(context)!;
+
+    final calculatorGroups = [
+      {
+        'title': locale.financeTools,
+        'items': [
+          {
+            'id': 'profitMarginCalculator',
+            'title': locale.profitMarginCalculator,
+            'icon': Icons.trending_up,
+            'builder': const ProfitMarginCalculator(),
+          },
+          {
+            'id': 'loanCalculator',
+            'title': locale.loanCalculator,
+            'icon': Icons.credit_score,
+            'builder': const LoanCalculator(),
+          },
+        ],
+      },
+      {
+        'title': locale.shoppingTools,
+        'items': [
+          {
+            'id': 'discountCalculator',
+            'title': locale.discountCalculator,
+            'icon': Icons.local_offer,
+            'builder': const DiscountCalculator(),
+          },
+          {
+            'id': 'vatCalculator',
+            'title': locale.vatCalculator,
+            'icon': Icons.receipt_long,
+            'builder': const VatCalculator(),
+          },
+          {
+            'id': 'unitPriceCalculator',
+            'title': locale.unitPriceCalculator,
+            'icon': Icons.shopping_cart_checkout,
+            'builder': const UnitPriceCalculator(),
+          },
+        ],
+      },
+      {
+        'title': locale.generalMathTools,
+        'items': [
+          {
+            'id': 'percentageCalculator',
+            'title': locale.percentageCalculator,
+            'icon': Icons.percent,
+            'builder': const PercentageCalculator(),
+          },
+          {
+            'id': 'changeByPercentCalculator',
+            'title': locale.changeByPercentCalculator,
+            'icon': Icons.trending_neutral,
+            'builder': const ChangeByPercentCalculator(),
+          },
+          {
+            'id': 'tipCalculator',
+            'title': locale.tipCalculator,
+            'icon': Icons.attach_money,
+            'builder': const TipCalculator(),
+          },
+        ],
+      },
+    ];
+
+    final List<Map<String, dynamic>> allItems = calculatorGroups
+        .expand((group) => group['items'] as List<Map<String, dynamic>>)
+        .toList();
+
+    final filteredGroups = calculatorGroups
+        .map((group) {
+          final items = group['items'] as List<Map<String, dynamic>>;
+          final filteredItems = items.where((item) {
+            return (item['title'] as String)
+                .toLowerCase()
+                .contains(_searchQuery.toLowerCase());
+          }).toList();
+          return {'title': group['title'], 'items': filteredItems};
+        })
+        .where((group) => (group['items'] as List).isNotEmpty)
+        .toList();
+
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.title)),
+      drawer: CustomDrawer(
+        onThemeToggle: widget.onThemeToggle,
+        onLocaleChange: widget.onLocaleChange,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          if (favoriteIds.isNotEmpty) ...[
+            Text(locale.favorites, style: sectionHeaderStyle),
+            _buildGridFromIds(favoriteIds, allItems),
+          ],
+          if (recentIds.isNotEmpty) ...[
+            Text(locale.recentCalculators, style: sectionHeaderStyle),
+            _buildGridFromIds(recentIds, allItems),
+          ],
+          TextField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              labelText: locale.search,
+              prefixIcon: const Icon(Icons.search),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            onChanged: (value) {
+              setState(() {
+                _searchQuery = value;
+              });
+            },
+          ),
+          const SizedBox(height: 20),
+          ...filteredGroups.map((group) {
+            final items = group['items'] as List<Map<String, dynamic>>;
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  group['title'] as String,
+                  style: sectionHeaderStyle,
+                ),
+                const SizedBox(height: 8),
+                GridView.count(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.8,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: items.map(_buildCalculatorTile).toList(),
+                ),
+                const SizedBox(height: 24),
+              ],
+            );
+          }).toList(),
+        ],
+      ),
+    );
+  }
+}
